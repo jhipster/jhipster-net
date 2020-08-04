@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Fetch all history for all tags and branches
       run: git fetch --prune --unshallow
-    - uses: rokroskar/workflow-run-cleanup-action
+    - uses: rokroskar/workflow-run-cleanup-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Install GitVersion
