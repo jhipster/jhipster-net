@@ -3,7 +3,7 @@ using Serilog.Core;
 using Serilog.Events;
 
 namespace JHipsterNet.Web.Logging {
-    public class LoggerNameEnricher: ILogEventEnricher {
+    public class LoggerNameEnricher : ILogEventEnricher {
 
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
         {
@@ -11,12 +11,12 @@ namespace JHipsterNet.Web.Logging {
             logEvent.AddPropertyIfAbsent(propertyFactory.CreateProperty("LoggerName", GetAbbreviatedClassName(sourceContext, 39)));
         }
 
-//        GetAbbreviatedClassName(null).Should().Be("");
-//        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost").Should().Be("WebHost");
-//        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 1).Should().Be("M.A.H.WebHost");
-//        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 17).Should().Be("M.A.H.WebHost");
-//        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 18).Should().Be("M.A.Hosting.WebHost");
-//        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 40).Should().Be("Microsoft.AspNetCore.Hosting.WebHost");
+        //        GetAbbreviatedClassName(null).Should().Be("");
+        //        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost").Should().Be("WebHost");
+        //        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 1).Should().Be("M.A.H.WebHost");
+        //        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 17).Should().Be("M.A.H.WebHost");
+        //        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 18).Should().Be("M.A.Hosting.WebHost");
+        //        GetAbbreviatedClassName("Microsoft.AspNetCore.Hosting.WebHost", 40).Should().Be("Microsoft.AspNetCore.Hosting.WebHost");
 
         private static string GetAbbreviatedClassName(string fullQualifiedClassName, int length = 0)
         {

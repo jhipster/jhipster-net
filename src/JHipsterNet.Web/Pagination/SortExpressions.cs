@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace JHipsterNet.Web.Pagination
-{
-    public class SortExpressions<TEntity, TKey>
-    {
+namespace JHipsterNet.Web.Pagination {
+    public class SortExpressions<TEntity, TKey> {
         private readonly List<SortExpression<TEntity, TKey>> _expressionList;
 
         public SortExpressions()
@@ -16,8 +14,7 @@ namespace JHipsterNet.Web.Pagination
 
         public void Add(Expression<Func<TEntity, TKey>> expression, bool isDescending = false)
         {
-            _expressionList.Add(new SortExpression<TEntity, TKey>
-            {
+            _expressionList.Add(new SortExpression<TEntity, TKey> {
                 Expression = expression,
                 IsDescending = isDescending
             });
@@ -29,8 +26,7 @@ namespace JHipsterNet.Web.Pagination
             var validSortings = sorts.GetAll();
             IOrderedQueryable<TEntity> orderedQuery = null;
 
-            foreach (var sort in validSortings)
-            {
+            foreach (var sort in validSortings) {
                 orderedQuery = isFirstSort
                     ? ApplySorting(query, sort)
                     : ApplySorting(orderedQuery, sort);

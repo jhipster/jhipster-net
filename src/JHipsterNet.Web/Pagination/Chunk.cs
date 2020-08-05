@@ -5,7 +5,8 @@ namespace JHipsterNet.Web.Pagination {
         public Chunk(List<T> content, IPageable pageable)
         {
             Content = new List<T>();
-            if (content != null) ((List<T>) Content).AddRange(content);
+            if (content != null)
+                ((List<T>)Content).AddRange(content);
 
             Pageable = pageable;
         }

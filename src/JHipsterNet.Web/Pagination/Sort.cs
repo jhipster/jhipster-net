@@ -71,8 +71,10 @@ namespace JHipsterNet.Web.Pagination {
 
         public override bool Equals(object obj)
         {
-            if (this == obj) return true;
-            if (obj == null || GetType() != obj.GetType()) return false;
+            if (this == obj)
+                return true;
+            if (obj == null || GetType() != obj.GetType())
+                return false;
             var sort = obj as Sort;
             return Orders.Equals(sort.Orders);
         }

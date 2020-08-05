@@ -1,8 +1,7 @@
 using Newtonsoft.Json;
 
 namespace JHipsterNet.Web.Pagination {
-    public class PageResponse
-    {
+    public class PageResponse {
         [JsonProperty("totalCount")]
         public int TotalCount { get; set; }
 
@@ -26,5 +25,5 @@ namespace JHipsterNet.Web.Pagination {
 
         [JsonProperty("hasPrevious")]
         public bool HasPrevious { get; set; }
-    }    
+    }
 }
