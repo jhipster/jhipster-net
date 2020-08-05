@@ -43,19 +43,21 @@ namespace JHipsterNet.Web.Pagination.Extensions {
 
         private static IQueryable<TEntity> ApplySort<TEntity>(this IQueryable<TEntity> query, Sort sort)
         {
-            if (!query.Any() || sort == null || sort.IsUnsorted()) return query;
+            if (!query.Any() || sort == null || sort.IsUnsorted())
+                return query;
 
             var sortExpressions = new SortExpressions<TEntity, object>();
             var propertyInfos = typeof(TEntity).GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
             IList<Order> orders = sort.Orders;
-            foreach (var order in orders)
-            {
-                if (order == null || order.Property == null) continue;
+            foreach (var order in orders) {
+                if (order == null || order.Property == null)
+                    continue;
 
                 bool isDescending = order.Direction.IsDescending();
                 PropertyInfo propertyInfo = propertyInfos.FirstOrDefault(pi => pi.Name.Equals(order.Property, StringComparison.InvariantCultureIgnoreCase));
-                if (propertyInfo == null) continue;
+                if (propertyInfo == null)
+                    continue;
 
                 var expressionFunc = GetExpression<TEntity, object>(propertyInfo);
                 sortExpressions.Add(expressionFunc, isDescending);

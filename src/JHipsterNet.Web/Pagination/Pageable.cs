@@ -7,7 +7,8 @@ namespace JHipsterNet.Web.Pagination {
             if (pageNumber < 0)
                 throw new ArgumentNullException(nameof(pageNumber), "Page Number must not be less than zero!");
 
-            if (pageSize < 1) throw new ArgumentNullException(nameof(pageSize), "Page Size must not be less than one!");
+            if (pageSize < 1)
+                throw new ArgumentNullException(nameof(pageSize), "Page Size must not be less than one!");
 
             PageNumber = pageNumber;
             PageSize = pageSize;
