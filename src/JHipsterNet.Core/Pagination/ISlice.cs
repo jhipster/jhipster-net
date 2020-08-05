@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public interface ISlice<out T> where T : class {
         int Number { get; }
 

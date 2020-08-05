@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public class PageResponse {
         [JsonProperty("totalCount")]
         public int TotalCount { get; set; }

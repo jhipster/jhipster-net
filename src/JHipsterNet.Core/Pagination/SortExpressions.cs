@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public class SortExpressions<TEntity, TKey> {
         private readonly List<SortExpression<TEntity, TKey>> _expressionList;
 
@@ -20,7 +20,7 @@ namespace JHipsterNet.Web.Pagination {
             });
         }
 
-        internal static IQueryable<TEntity> ApplySorts(IQueryable<TEntity> query, SortExpressions<TEntity, TKey> sorts)
+        public static IQueryable<TEntity> ApplySorts(IQueryable<TEntity> query, SortExpressions<TEntity, TKey> sorts)
         {
             var isFirstSort = true;
             var validSortings = sorts.GetAll();

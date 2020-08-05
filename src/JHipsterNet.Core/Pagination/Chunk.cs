@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public abstract class Chunk<T> : ISlice<T> where T : class {
         public Chunk(List<T> content, IPageable pageable)
         {
             Content = new List<T>();
-            if (content != null)
+            if (content != null) {
                 ((List<T>)Content).AddRange(content);
+            }
 
             Pageable = pageable;
         }

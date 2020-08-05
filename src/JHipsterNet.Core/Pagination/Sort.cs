@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public class Sort {
         public const Direction DefaultDirection = Direction.Asc;
         public static readonly Sort Unsorted = new Sort();
@@ -71,10 +71,14 @@ namespace JHipsterNet.Web.Pagination {
 
         public override bool Equals(object obj)
         {
-            if (this == obj)
+            if (this == obj) {
                 return true;
-            if (obj == null || GetType() != obj.GetType())
+            }
+
+            if (obj == null || GetType() != obj.GetType()) {
                 return false;
+            }
+
             var sort = obj as Sort;
             return Orders.Equals(sort.Orders);
         }

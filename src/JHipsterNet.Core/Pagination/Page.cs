@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public class Page<T> : Chunk<T>, IPage<T> where T : class {
         public Page(List<T> content, IPageable pageable, int total) : base(content, pageable)
         {

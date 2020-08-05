@@ -1,14 +1,16 @@
 using System;
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public class Pageable : IPageable {
         private Pageable(int pageNumber, int pageSize, Sort sort = null)
         {
-            if (pageNumber < 0)
+            if (pageNumber < 0) {
                 throw new ArgumentNullException(nameof(pageNumber), "Page Number must not be less than zero!");
+            }
 
-            if (pageSize < 1)
+            if (pageSize < 1) {
                 throw new ArgumentNullException(nameof(pageSize), "Page Size must not be less than one!");
+            }
 
             PageNumber = pageNumber;
             PageSize = pageSize;

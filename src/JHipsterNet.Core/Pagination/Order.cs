@@ -1,5 +1,5 @@
 
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public class Order {
         public bool IgnoreCase { get; set; }
 

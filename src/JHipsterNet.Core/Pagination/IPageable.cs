@@ -1,4 +1,4 @@
-namespace JHipsterNet.Web.Pagination {
+namespace JHipsterNet.Core.Pagination {
     public static class PageableConstants {
         public static readonly IPageable UnPaged = new UnPaged();
     }
