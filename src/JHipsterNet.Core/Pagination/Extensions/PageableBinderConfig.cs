@@ -1,6 +1,4 @@
-using JHipsterNet.Core.Pagination;
-
-namespace JHipsterNet.Web.Pagination.Binders {
+namespace JHipsterNet.Core.Pagination.Extensions {
     public class PageableBinderConfig {
         public const string DefaultPageParameter = "page";
 
