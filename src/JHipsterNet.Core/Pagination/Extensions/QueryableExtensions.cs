@@ -4,11 +4,9 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
-using JHipsterNet.Core.Pagination;
-using JHipsterNet.Web.Pagination.Binders;
 using Microsoft.EntityFrameworkCore;
 
-namespace JHipsterNet.Web.Pagination.Extensions {
+namespace JHipsterNet.Core.Pagination.Extensions {
     public static class QueryableExtensions {
 
         public static async Task<IPage<TDto>> UsePageableAsDtoAsync<TEntity, TDto>(this IQueryable<TEntity> query, IPageable pageable, IMapper mapper)
