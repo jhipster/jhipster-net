@@ -729,8 +729,8 @@ MigrationBackup/
 # End of https://www.toptal.com/developers/gitignore/api/vim,rider,emacs,linux,sonar,macos,windows,textmate,intellij,sonarqube,dotnetcore,sublimetext,visualstudio,visualstudiocode,dotsettings,dotenv,direnv
 
 # Rider IDE
-.idea/.idea.RealInfo/.idea/
-.idea/.idea.RealInfo/riderModule.iml
+.idea/.idea.JHipsterNet/.idea/
+.idea/.idea.JHipsterNet/riderModule.iml
 
 # App-specific Generated files
 **/.toolstarget
