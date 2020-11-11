@@ -20,7 +20,7 @@ jobs:
     - name: Use Dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.100-rc.2.20479.15'
+        dotnet-version: '5.0.100'
     - name: Build with dotnet
       run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.6
     - name: Pack JHipsterNet.Core with dotnet
