@@ -22,10 +22,10 @@ jobs:
       with:
         dotnet-version: '5.0.100'
     - name: Build with dotnet
-      run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.6
+      run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.7
     - name: Pack JHipsterNet.Core with dotnet
-      run: dotnet pack src/JHipsterNet.Core/JHipsterNet.Core.csproj --output nuget-packages --configuration Release --include-symbols -p:PackageVersion=1.0.6
+      run: dotnet pack src/JHipsterNet.Core/JHipsterNet.Core.csproj --output nuget-packages --configuration Release --include-symbols -p:PackageVersion=1.0.7
     - name: Pack JHipsterNet.Web with dotnet
-      run: dotnet pack src/JHipsterNet.Web/JHipsterNet.Web.csproj --output nuget-packages --configuration Release --include-symbols -p:PackageVersion=1.0.6
+      run: dotnet pack src/JHipsterNet.Web/JHipsterNet.Web.csproj --output nuget-packages --configuration Release --include-symbols -p:PackageVersion=1.0.7
     - name: Push with dotnet
       run: dotnet nuget push '**/*.nupkg' --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
