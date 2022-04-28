@@ -23,18 +23,24 @@ namespace JHipsterNet.Web.Pagination.Swagger
                 return;
             }
 
+            // We cleared all the auto generated parameters
+            // So now we are going to add back the three parameters page, size and sort
+
+            // This first parameter is the zero based page number (offset)
             operation.Parameters.Add(new OpenApiParameter {
                 Name = "page",
                 In = ParameterLocation.Query,
                 Schema = new OpenApiSchema { Type = "number" }
             });
 
+            // This parameter is the number of entities on each page
             operation.Parameters.Add(new OpenApiParameter {
                 Name = "size",
                 In = ParameterLocation.Query,
                 Schema = new OpenApiSchema { Type = "number" }
             });
 
+            // This parameter describes how the list should be sorted
             operation.Parameters.Add(new OpenApiParameter {
                 Name = "sort",
                 In = ParameterLocation.Query,
