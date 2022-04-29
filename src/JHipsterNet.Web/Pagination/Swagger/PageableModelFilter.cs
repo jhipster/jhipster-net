@@ -6,7 +6,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace JHipsterNet.Web.Pagination.Swagger
 {
-    public class PageableModelFilter {
+    public class PageableModelFilter : IOperationFilter {
         public void Apply(OpenApiOperation operation, OperationFilterContext context) {
             var description = context.ApiDescription;
             if (description.HttpMethod != null && description.HttpMethod.ToLower() != HttpMethod.Get.ToString().ToLower()) {
