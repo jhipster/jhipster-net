@@ -14,15 +14,15 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"        
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Fetch all history for all tags and branches
       run: git fetch --prune --unshallow
     - name: Use Dotnet
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '7.0.202'
     - name: Build with dotnet
-      run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.9
+      run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.10
     - name: Pack JHipsterNet.Core with dotnet
       run: dotnet pack src/JHipsterNet.Core/JHipsterNet.Core.csproj --output nuget-packages --configuration Release --include-symbols -p:PackageVersion=1.0.9
     - name: Pack JHipsterNet.Web with dotnet
