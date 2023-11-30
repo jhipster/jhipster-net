@@ -17,7 +17,7 @@ namespace JHipsterNet.Core.Pagination {
             Sort = sort ?? Sort.Unsorted;
         }
 
-        public IPageable Previous => new Pageable(PageNumber - 1, PageSize, Sort);
+        private IPageable Previous => new Pageable(PageNumber - 1, PageSize, Sort);
         public bool IsPaged => true;
 
         public int PageNumber { get; }
