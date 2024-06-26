@@ -1,3 +1,5 @@
+ using JHipsterNet.Core.Pagination.Extensions;
+
 namespace JHipsterNet.Core.Pagination {
     public static class PageableConstants {
         public static readonly IPageable UnPaged = new UnPaged();
@@ -27,9 +29,9 @@ namespace JHipsterNet.Core.Pagination {
 
         public bool HasPrevious => false;
 
-        public int PageNumber => -1;
-        public int PageSize => -1;
+        public int PageNumber => 0;
+        public int PageSize => PageableBinderConfig.DefaultMaxPageSize;
 
-        public int Offset => -1;
+        public int Offset => 0;
     }
 }
