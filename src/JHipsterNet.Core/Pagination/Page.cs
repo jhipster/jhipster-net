@@ -13,7 +13,7 @@ namespace JHipsterNet.Core.Pagination {
 
         public new bool IsLast => !HasNext;
 
-        public int TotalPages => Size == 0 ? 1 : Total / Size;
+        public int TotalPages => Size == 0 ? 1 : (Total / Size) + (Total % Size > 0 ? 1 : 0);
 
         public int TotalElements => Total;
     }
