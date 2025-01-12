@@ -20,9 +20,9 @@ jobs:
     - name: Use Dotnet
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.100'
+        dotnet-version: '9.0.100'
     - name: Build with dotnet
-      run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.11
+      run: dotnet build JHipsterNet.sln --configuration Release /p:Version=1.0.12
     - name: Pack JHipsterNet.Core with dotnet
       run: dotnet pack src/JHipsterNet.Core/JHipsterNet.Core.csproj --output nuget-packages --configuration Release --include-symbols -p:PackageVersion=1.0.11
     - name: Pack JHipsterNet.Web with dotnet
