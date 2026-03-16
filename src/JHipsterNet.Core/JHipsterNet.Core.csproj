@@ -12,7 +12,7 @@
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="AutoMapper" Version="13.0.1" />
+        <PackageReference Include="AutoMapper" Version="15.1.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
     </ItemGroup>
 
